@@ -6,6 +6,7 @@ package random;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Random;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -33,15 +34,16 @@ public class RockPaperScissors extends JPanel implements ActionListener{
     public void run(){
 
 		try {
+		
 
 			// 1. Find 3 pictures (a rock, paper, and scissors) on the Internet.
 			// Drop the pictures into this package
 			// Replace the names below with your images
 		
 			rockImage = new ImageIcon(getClass().getResource("rock.png"));
-			paperImage = new ImageIcon(getClass().getResource("paper.jpeg"));
-			scissorsImage = new ImageIcon(getClass().getResource("scissors.jpeg"));
-
+			paperImage = new ImageIcon(getClass().getResource("paper.png"));
+			scissorsImage = new ImageIcon(getClass().getResource("scissors.png"));
+			
 		} catch (Exception ex) {
 			JOptionPane.showMessageDialog(null, "Cannot find one or more of your images");
 		}
@@ -58,7 +60,7 @@ public class RockPaperScissors extends JPanel implements ActionListener{
         paperButton.setPreferredSize(buttonDim);
         scissorsButton.setPreferredSize(buttonDim);
         
-        instructionLabel.setText("Choose Your Weapon!");
+        instructionLabel.setText("Pick your item!");
         
         add(instructionLabel);
         add(rockButton);
@@ -81,7 +83,7 @@ public class RockPaperScissors extends JPanel implements ActionListener{
         //2. Run the program 4 times. Does the computer always choose the same thing?
 
         //3. Change the value of opponentSelection to be a random number between 0 and 2;
-        int opponentSelection = 0;
+    	int opponentSelection = 0;
         
         //4. Run the program again. Is the result different?
  
@@ -97,13 +99,13 @@ public class RockPaperScissors extends JPanel implements ActionListener{
                     + "The computer chose: " + convertSelection(opponentSelection) + ".\n");
         
         if(selection == opponentSelection){
-            JOptionPane.showMessageDialog(null, "No Winner.  Play again.");
+            JOptionPane.showMessageDialog(null, "You Loose (THE ROCK NEVER EVER LOOSES)");
         }else if((selection == 0 && opponentSelection == 2) || 
                  (selection == 1 && opponentSelection == 0) ||
                  (selection == 2 && opponentSelection == 1)){
-            JOptionPane.showMessageDialog(null, "You Win!");
+            JOptionPane.showMessageDialog(null, "You Loose! (The Rock Was Too Heavy 4 You) ;-; ");
         }else{
-            JOptionPane.showMessageDialog(null, "You Lose!");
+            JOptionPane.showMessageDialog(null, "You Lose! (The Rock Was Too Heavy 4 You) ;-; ");
         }
     }
     
