@@ -14,12 +14,24 @@ public class Validation {
 		
 		Random randomMaker = new Random();
 		
-		int randomNumber = randomMaker.nextInt(5);
+		int randomNumber = randomMaker.nextInt(6);
 		
 		// 2. On paper, write all the numbers that get printed when you run this class 10 times
 		
 		System.out.println(randomNumber);
-
+		
+		if (randomNumber == 1) {
+			JOptionPane.showMessageDialog(null, "You Are Alive");
+		} else if (randomNumber == 2) {
+			JOptionPane.showMessageDialog(null, "You Are On An Apple Computer");
+		} else if (randomNumber == 3) {
+		    JOptionPane.showMessageDialog(null, "You Hate Brocoli");
+		} else if (randomNumber == 4) {
+			JOptionPane.showMessageDialog(null,"Every Question You Get Wrong... The Angrier I Get  >:(");
+		} else if (randomNumber == 5) {
+			JOptionPane.showMessageDialog(null,"EVERY DOOR YOU OPEN.... THE MORE NOISES THAT LEAD ME TO YOU  :(");
+		}
+		
 		// 3. Use each value of randomNumber to give the user a random compliment.
 
 		// 4. Repeat all the code above 10 times

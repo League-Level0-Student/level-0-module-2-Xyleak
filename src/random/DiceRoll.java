@@ -3,7 +3,10 @@
 
 package random;
 
+
 import java.awt.Dimension;
+import java.util.Random;
+
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -16,9 +19,9 @@ public class DiceRoll {
 
 	private JFrame window = new JFrame("Roll the Dice!");
 	private JPanel panel = new JPanel();
-	private JButton rollButton = new JButton("CLICK HERE TO ROLL");
+	private JButton rollButton = new JButton("CLICK HERE TO ROLL.... OR ILL BREAK YOUR KNEE CAPS");
 	private JLabel label = new JLabel();
-
+    private Icon zeroImg;
 	private Icon oneImg;
 	private Icon twoImg;
 	private Icon threeImg;
@@ -32,6 +35,7 @@ public class DiceRoll {
 	
 	public void run() {
 		try {
+			zeroImg = new ImageIcon(getClass().getResource("rock.png"));
 			oneImg = new ImageIcon(getClass().getResource("dice 1.png"));
 			twoImg = new ImageIcon(getClass().getResource("dice 2.png"));
 			threeImg = new ImageIcon(getClass().getResource("dice 3.png"));
@@ -43,12 +47,15 @@ public class DiceRoll {
 			System.exit(0);
 		}
 
-		label.setIcon(oneImg);
+		label.setIcon(zeroImg);
 
 		rollButton.addActionListener((e) -> {
 
 			// 1. Make randomChoice equal to a random number between 1 and 6
-			int randomChoice = (6);
+			
+			Random Rand = new Random();
+			
+			int randomChoice = (Rand.nextInt (6)+1);
 
 			// 2. Fix the code below so that it displays the correct image
 			if (randomChoice == 1) {
@@ -66,7 +73,7 @@ public class DiceRoll {
 			}
 		});
 
-		panel.setPreferredSize(new Dimension(700, 700));
+		panel.setPreferredSize(new Dimension(999, 999));
 		panel.add(rollButton);
 		panel.add(label);
 		window.add(panel);
