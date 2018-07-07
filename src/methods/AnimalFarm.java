@@ -19,7 +19,20 @@ AnimalFarm() {
 	 * animal.
 	 */
 
+	String Animal = JOptionPane.showInputDialog(null, "Pick An Animal (OPTIONS: Cow, Duck, And Dog)");
+	
 	/* 2. Make it so that the user can keep entering new animals. */
+	{
+	if(Animal.equals("Cow")) playMoo(); 
+	}
+	
+	{
+     if(Animal.equals("Duck")) playQuack();
+	}
+	 
+	{
+	if(Animal.equals("Dog")) playWoof();
+	}
 }
 
 void playMoo() {
